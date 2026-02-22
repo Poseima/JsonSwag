@@ -13,6 +13,7 @@ class LazyJSONArrayLoader {
     let totalCount: Int
     let needsLazyLoading: Bool
     
+    @MainActor
     init(array: [Any], threshold: Int = 100, batchSize: Int = 50) {
         self.fullArray = array
         self.totalCount = array.count
@@ -20,8 +21,11 @@ class LazyJSONArrayLoader {
         self.needsLazyLoading = array.count > threshold
         
         if needsLazyLoading {
-            // Load initial batch
-            loadNextBatch()
+            // Load initial batch synchronously
+            let endIndex = min(batchSize, totalCount)
+            self.visibleItems = Array(fullArray[0..<endIndex])
+            self.loadedCount = endIndex
+            self.isFullyLoaded = loadedCount >= totalCount
         } else {
             // Load all immediately for small arrays
             visibleItems = array
@@ -30,6 +34,7 @@ class LazyJSONArrayLoader {
         }
     }
     
+    @MainActor
     func loadNextBatch() {
         guard !isFullyLoaded && !isLoading else { return }
         
@@ -38,16 +43,13 @@ class LazyJSONArrayLoader {
         let endIndex = min(loadedCount + batchSize, totalCount)
         let newItems = Array(fullArray[loadedCount..<endIndex])
         
-        // Small delay for smooth UI
-        Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 10_000_000) // 10ms
-            visibleItems.append(contentsOf: newItems)
-            loadedCount = endIndex
-            isFullyLoaded = loadedCount >= totalCount
-            isLoading = false
-        }
+        visibleItems.append(contentsOf: newItems)
+        loadedCount = endIndex
+        isFullyLoaded = loadedCount >= totalCount
+        isLoading = false
     }
     
+    @MainActor
     func loadAllIfNeeded() {
         if !isFullyLoaded {
             visibleItems = fullArray

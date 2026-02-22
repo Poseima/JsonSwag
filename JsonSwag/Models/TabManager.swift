@@ -83,6 +83,7 @@ struct TabItem: Identifiable {
         )
     }
     
+    @MainActor
     static func fromFile(_ url: URL, preservingId id: UUID? = nil) -> TabItem {
         let fileType = FileType.detect(from: url)
         

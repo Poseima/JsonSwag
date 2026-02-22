@@ -33,7 +33,6 @@ struct ValueView: View {
     
     @Environment(\.expandAllState) private var expandAllState
     @State private var isExpanded: Bool = false
-    @State private var lastExpandState: ExpandAllState = .none
     
     private var jsonValue: JSONValue {
         switch value {
@@ -177,10 +176,10 @@ struct ValueView: View {
                     }
                 }
                 .buttonStyle(.plain)
-                .onChange(of: expandAllState) { _, newState in
-                    if newState != lastExpandState {
+                .onChange(of: expandAllState) { oldValue, newValue in
+                    if oldValue != newValue {
                         withAnimation(.easeInOut(duration: 0.15)) {
-                            switch newState {
+                            switch newValue {
                             case .expandAll:
                                 isExpanded = true
                             case .collapseAll:
@@ -189,17 +188,6 @@ struct ValueView: View {
                                 break
                             }
                         }
-                        lastExpandState = newState
-                    }
-                }
-                .onAppear {
-                    // Handle initial state when view appears (for nested views created after expand)
-                    if expandAllState == .expandAll && !isExpanded {
-                        isExpanded = true
-                        lastExpandState = .expandAll
-                    } else if expandAllState == .collapseAll && isExpanded {
-                        isExpanded = false
-                        lastExpandState = .collapseAll
                     }
                 }
                 
@@ -244,10 +232,10 @@ struct ValueView: View {
                     }
                 }
                 .buttonStyle(.plain)
-                .onChange(of: expandAllState) { _, newState in
-                    if newState != lastExpandState {
+                .onChange(of: expandAllState) { oldValue, newValue in
+                    if oldValue != newValue {
                         withAnimation(.easeInOut(duration: 0.15)) {
-                            switch newState {
+                            switch newValue {
                             case .expandAll:
                                 isExpanded = true
                             case .collapseAll:
@@ -256,17 +244,6 @@ struct ValueView: View {
                                 break
                             }
                         }
-                        lastExpandState = newState
-                    }
-                }
-                .onAppear {
-                    // Handle initial state when view appears (for nested views created after expand)
-                    if expandAllState == .expandAll && !isExpanded {
-                        isExpanded = true
-                        lastExpandState = .expandAll
-                    } else if expandAllState == .collapseAll && isExpanded {
-                        isExpanded = false
-                        lastExpandState = .collapseAll
                     }
                 }
                 

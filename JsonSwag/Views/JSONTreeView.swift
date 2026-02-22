@@ -10,8 +10,6 @@ struct JSONTreeView: View {
     var onLoadMore: (() -> Void)?
     
     @State private var expandState: ExpandAllState = .none
-    @Environment(\.expandAllState) private var parentExpandState
-    @State private var lastParentState: ExpandAllState = .none
     
     private var displayValue: Any {
         if let loader = arrayLoader {
@@ -185,21 +183,6 @@ struct JSONTreeView: View {
                 .stroke(Color(nsColor: .separatorColor).opacity(0.3), lineWidth: 0.5)
         )
         .environment(\.expandAllState, expandState)
-        .onChange(of: parentExpandState) { _, newState in
-            if newState != lastParentState {
-                withAnimation(.easeInOut(duration: 0.15)) {
-                    switch newState {
-                    case .expandAll:
-                        expandState = .expandAll
-                    case .collapseAll:
-                        expandState = .collapseAll
-                    case .none:
-                        break
-                    }
-                }
-                lastParentState = newState
-            }
-        }
     }
     
     private func copyToClipboard() {
