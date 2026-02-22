@@ -23,6 +23,10 @@
 		AAAA1A1A1A1A1A1A0014 /* LazyRecordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0015 /* LazyRecordLoader.swift */; };
 		AAAA1A1A1A1A1A1A0015 /* ExpandAllKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0016 /* ExpandAllKey.swift */; };
 		AAAA1A1A1A1A1A1A0016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5A5A5A5A5A5A0008 /* Assets.xcassets */; };
+		AAAA1A1A1A1A1A1A0017 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0017 /* FileType.swift */; };
+		AAAA1A1A1A1A1A1A0018 /* JSONFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0018 /* JSONFileParser.swift */; };
+		AAAA1A1A1A1A1A1A0019 /* LazyJSONArrayLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0019 /* LazyJSONArrayLoader.swift */; };
+		AAAA1A1A1A1A1A1A0020 /* JSONTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0020 /* JSONTreeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		AAAA2A2A2A2A2A2A0014 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		AAAA2A2A2A2A2A2A0015 /* LazyRecordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyRecordLoader.swift; sourceTree = "<group>"; };
 		AAAA2A2A2A2A2A2A0016 /* ExpandAllKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandAllKey.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0017 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0018 /* JSONFileParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileParser.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0019 /* LazyJSONArrayLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyJSONArrayLoader.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0020 /* JSONTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTreeView.swift; sourceTree = "<group>"; };
 		AAAA5A5A5A5A5A5A0008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAAA3A3A3A3A3A3A0001 /* JsonSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +106,7 @@
 				AAAA2A2A2A2A2A2A0010 /* MainView.swift */,
 				AAAA2A2A2A2A2A2A0012 /* SearchBarView.swift */,
 				AAAA2A2A2A2A2A2A0013 /* HighlightedTextView.swift */,
+				AAAA2A2A2A2A2A2A0020 /* JSONTreeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +126,9 @@
 				AAAA2A2A2A2A2A2A0007 /* JSONLParser.swift */,
 				AAAA2A2A2A2A2A2A0015 /* LazyRecordLoader.swift */,
 				AAAA2A2A2A2A2A2A0016 /* ExpandAllKey.swift */,
+				AAAA2A2A2A2A2A2A0017 /* FileType.swift */,
+				AAAA2A2A2A2A2A2A0018 /* JSONFileParser.swift */,
+				AAAA2A2A2A2A2A2A0019 /* LazyJSONArrayLoader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,6 +225,10 @@
 				AAAA1A1A1A1A1A1A0013 /* SearchManager.swift in Sources */,
 				AAAA1A1A1A1A1A1A0014 /* LazyRecordLoader.swift in Sources */,
 				AAAA1A1A1A1A1A1A0015 /* ExpandAllKey.swift in Sources */,
+				AAAA1A1A1A1A1A1A0017 /* FileType.swift in Sources */,
+				AAAA1A1A1A1A1A1A0018 /* JSONFileParser.swift in Sources */,
+				AAAA1A1A1A1A1A1A0019 /* LazyJSONArrayLoader.swift in Sources */,
+				AAAA1A1A1A1A1A1A0020 /* JSONTreeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

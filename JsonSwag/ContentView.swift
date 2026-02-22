@@ -7,6 +7,9 @@ struct ContentView: View {
     var isLoading: Bool
     var hasMoreRecords: Bool
     var searchManager: SearchManager?
+    var fileType: FileType = .jsonl
+    var jsonRootValue: Any?
+    var arrayLoader: LazyJSONArrayLoader?
     @Binding var scrollToRecordId: Int?
     var onLoadMore: () -> Void
     var onFileOpened: (URL) -> Void
@@ -29,10 +32,21 @@ struct ContentView: View {
         VStack(spacing: 0) {
             if let error = error {
                 errorView(error)
-            } else if records.isEmpty {
-                emptyState
+            } else if fileType == .jsonl {
+                if records.isEmpty {
+                    emptyState
+                } else {
+                    recordsList
+                }
             } else {
-                recordsList
+                // JSON file (object or array)
+                if let rootValue = jsonRootValue {
+                    jsonTreeView(rootValue)
+                } else if let loader = arrayLoader {
+                    jsonTreeView(loader.visibleItems)
+                } else {
+                    emptyState
+                }
             }
         }
         .onDrop(of: [.fileURL], isTargeted: $isTargeted) { providers in
@@ -60,7 +74,7 @@ struct ContentView: View {
                 .font(.system(size: 48))
                 .foregroundColor(.secondary)
             
-            Text(hasFile ? "Empty File" : "Open a JSONL File")
+            Text(hasFile ? "Empty File" : "Open a JSON/JSONL File")
                 .font(.title2)
                 .fontWeight(.medium)
             
@@ -137,6 +151,21 @@ struct ContentView: View {
                     }
                 }
             }
+        }
+    }
+    
+    private func jsonTreeView(_ rootValue: Any) -> some View {
+        ScrollView {
+            JSONTreeView(
+                rootValue: rootValue,
+                searchQuery: searchManager?.query ?? "",
+                isCaseSensitive: searchManager?.isCaseSensitive ?? false,
+                isWholeWord: searchManager?.isWholeWord ?? false,
+                isRegex: searchManager?.isRegex ?? false,
+                arrayLoader: arrayLoader,
+                onLoadMore: onLoadMore
+            )
+            .padding(20)
         }
     }
     

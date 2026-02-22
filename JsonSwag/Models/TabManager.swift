@@ -43,7 +43,10 @@ struct TabItem: Identifiable {
     let id: UUID
     var fileURL: URL?
     var fileName: String
+    var fileType: FileType
     var recordLoader: LazyRecordLoader?
+    var arrayLoader: LazyJSONArrayLoader?
+    var jsonRootValue: Any?
     var searchManager = SearchManager()
     var error: String?
     
@@ -52,11 +55,19 @@ struct TabItem: Identifiable {
     }
     
     var isLoading: Bool {
-        recordLoader?.isLoading ?? false
+        if fileType == .jsonl {
+            return recordLoader?.isLoading ?? false
+        } else {
+            return arrayLoader?.isLoading ?? false
+        }
     }
     
     var isFullyLoaded: Bool {
-        recordLoader?.isFullyLoaded ?? true
+        if fileType == .jsonl {
+            return recordLoader?.isFullyLoaded ?? true
+        } else {
+            return arrayLoader?.isFullyLoaded ?? true
+        }
     }
     
     static func newTab() -> TabItem {
@@ -64,19 +75,73 @@ struct TabItem: Identifiable {
             id: UUID(),
             fileURL: nil,
             fileName: "New Tab",
+            fileType: .jsonl,
             recordLoader: nil,
+            arrayLoader: nil,
+            jsonRootValue: nil,
             error: nil
         )
     }
     
     static func fromFile(_ url: URL, preservingId id: UUID? = nil) -> TabItem {
-        let loader = LazyRecordLoader(url: url)
-        return TabItem(
-            id: id ?? UUID(),
-            fileURL: url,
-            fileName: url.lastPathComponent,
-            recordLoader: loader,
-            error: loader.error
-        )
+        let fileType = FileType.detect(from: url)
+        
+        if fileType == .jsonl {
+            // JSONL file - use existing loader
+            let loader = LazyRecordLoader(url: url)
+            return TabItem(
+                id: id ?? UUID(),
+                fileURL: url,
+                fileName: url.lastPathComponent,
+                fileType: fileType,
+                recordLoader: loader,
+                arrayLoader: nil,
+                jsonRootValue: nil,
+                error: loader.error
+            )
+        } else {
+            // JSON file - parse and create appropriate loader
+            do {
+                let (type, data) = try JSONFileParser.parse(url)
+                
+                if type == .jsonArray, let array = data as? [Any] {
+                    // Array with potential lazy loading
+                    let loader = LazyJSONArrayLoader(array: array)
+                    return TabItem(
+                        id: id ?? UUID(),
+                        fileURL: url,
+                        fileName: url.lastPathComponent,
+                        fileType: type,
+                        recordLoader: nil,
+                        arrayLoader: loader,
+                        jsonRootValue: array,
+                        error: nil
+                    )
+                } else {
+                    // Object or other JSON
+                    return TabItem(
+                        id: id ?? UUID(),
+                        fileURL: url,
+                        fileName: url.lastPathComponent,
+                        fileType: type,
+                        recordLoader: nil,
+                        arrayLoader: nil,
+                        jsonRootValue: data,
+                        error: nil
+                    )
+                }
+            } catch {
+                return TabItem(
+                    id: id ?? UUID(),
+                    fileURL: url,
+                    fileName: url.lastPathComponent,
+                    fileType: fileType,
+                    recordLoader: nil,
+                    arrayLoader: nil,
+                    jsonRootValue: nil,
+                    error: error.localizedDescription
+                )
+            }
+        }
     }
 }

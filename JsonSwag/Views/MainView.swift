@@ -44,13 +44,17 @@ struct MainView: View {
                     }
                     .onChange(of: tab.searchManager.query) { _, _ in
                         // Load all records for search
-                        if let loader = tab.recordLoader {
-                            loader.loadAllIfNeeded()
-                            // Re-search after loading
-                            Task {
-                                try? await Task.sleep(nanoseconds: 100_000_000)
-                                tab.searchManager.search(in: loader.allRecords)
+                        if tab.fileType == .jsonl {
+                            if let loader = tab.recordLoader {
+                                loader.loadAllIfNeeded()
+                                // Re-search after loading
+                                Task {
+                                    try? await Task.sleep(nanoseconds: 100_000_000)
+                                    tab.searchManager.search(in: loader.allRecords)
+                                }
                             }
+                        } else if let loader = tab.arrayLoader {
+                            loader.loadAllIfNeeded()
                         }
                     }
                 }
@@ -62,9 +66,16 @@ struct MainView: View {
                     isLoading: tab.isLoading,
                     hasMoreRecords: !tab.isFullyLoaded,
                     searchManager: tab.searchManager,
+                    fileType: tab.fileType,
+                    jsonRootValue: tab.jsonRootValue,
+                    arrayLoader: tab.arrayLoader,
                     scrollToRecordId: $scrollToRecordId,
                     onLoadMore: {
-                        tab.recordLoader?.loadNextBatch()
+                        if tab.fileType == .jsonl {
+                            tab.recordLoader?.loadNextBatch()
+                        } else {
+                            tab.arrayLoader?.loadNextBatch()
+                        }
                     },
                     onFileOpened: { url in
                         let newItem = TabItem.fromFile(url, preservingId: selectedId)
