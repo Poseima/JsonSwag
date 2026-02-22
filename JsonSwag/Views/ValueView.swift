@@ -176,18 +176,18 @@ struct ValueView: View {
                     }
                 }
                 .buttonStyle(.plain)
-                .onChange(of: expandAllState) { oldValue, newValue in
-                    if oldValue != newValue {
-                        withAnimation(.easeInOut(duration: 0.15)) {
-                            switch newValue {
-                            case .expandAll:
-                                isExpanded = true
-                            case .collapseAll:
-                                isExpanded = false
-                            case .none:
-                                break
-                            }
+                .task(id: expandAllState) {
+                    switch expandAllState {
+                    case .expandAll:
+                        if !isExpanded { 
+                            isExpanded = true 
                         }
+                    case .collapseAll:
+                        if isExpanded { 
+                            isExpanded = false 
+                        }
+                    case .none:
+                        break
                     }
                 }
                 
@@ -232,18 +232,18 @@ struct ValueView: View {
                     }
                 }
                 .buttonStyle(.plain)
-                .onChange(of: expandAllState) { oldValue, newValue in
-                    if oldValue != newValue {
-                        withAnimation(.easeInOut(duration: 0.15)) {
-                            switch newValue {
-                            case .expandAll:
-                                isExpanded = true
-                            case .collapseAll:
-                                isExpanded = false
-                            case .none:
-                                break
-                            }
+                .task(id: expandAllState) {
+                    switch expandAllState {
+                    case .expandAll:
+                        if !isExpanded { 
+                            isExpanded = true 
                         }
+                    case .collapseAll:
+                        if isExpanded { 
+                            isExpanded = false 
+                        }
+                    case .none:
+                        break
                     }
                 }
                 
