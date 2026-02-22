@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAAA1A1A1A1A1A1A0001 /* JsonSwagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0001 /* JsonSwagApp.swift */; };
+		AAAA1A1A1A1A1A1A0002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0002 /* ContentView.swift */; };
+		AAAA1A1A1A1A1A1A0003 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0003 /* ValueView.swift */; };
+		AAAA1A1A1A1A1A1A0004 /* KeyValueRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0004 /* KeyValueRowView.swift */; };
+		AAAA1A1A1A1A1A1A0005 /* RecordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0005 /* RecordCardView.swift */; };
+		AAAA1A1A1A1A1A1A0006 /* JSONRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0006 /* JSONRecord.swift */; };
+		AAAA1A1A1A1A1A1A0007 /* JSONLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0007 /* JSONLParser.swift */; };
+		AAAA1A1A1A1A1A1A0008 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0008 /* TabManager.swift */; };
+		AAAA1A1A1A1A1A1A0009 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0009 /* TabBarView.swift */; };
+		AAAA1A1A1A1A1A1A0010 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0010 /* MainView.swift */; };
+		AAAA1A1A1A1A1A1A0011 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0012 /* SearchBarView.swift */; };
+		AAAA1A1A1A1A1A1A0012 /* HighlightedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0013 /* HighlightedTextView.swift */; };
+		AAAA1A1A1A1A1A1A0013 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0014 /* SearchManager.swift */; };
+		AAAA1A1A1A1A1A1A0014 /* LazyRecordLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0015 /* LazyRecordLoader.swift */; };
+		AAAA1A1A1A1A1A1A0015 /* ExpandAllKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA2A2A2A2A2A2A0016 /* ExpandAllKey.swift */; };
+		AAAA1A1A1A1A1A1A0016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5A5A5A5A5A5A0008 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AAAA2A2A2A2A2A2A0001 /* JsonSwagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSwagApp.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0003 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0004 /* KeyValueRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueRowView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0005 /* RecordCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCardView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0006 /* JSONRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRecord.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0007 /* JSONLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLParser.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0008 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0009 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0010 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0012 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0013 /* HighlightedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedTextView.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0014 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0015 /* LazyRecordLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyRecordLoader.swift; sourceTree = "<group>"; };
+		AAAA2A2A2A2A2A2A0016 /* ExpandAllKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandAllKey.swift; sourceTree = "<group>"; };
+		AAAA5A5A5A5A5A5A0008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAAA3A3A3A3A3A3A0001 /* JsonSwag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonSwag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAAA4A4A4A4A4A4A0001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAAA5A5A5A5A5A5A0001 = {
+			isa = PBXGroup;
+			children = (
+				AAAA5A5A5A5A5A5A0002 /* JsonSwag */,
+				AAAA5A5A5A5A5A5A0003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAAA5A5A5A5A5A5A0002 /* JsonSwag */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA2A2A2A2A2A2A0011 /* Info.plist */,
+				AAAA2A2A2A2A2A2A0001 /* JsonSwagApp.swift */,
+				AAAA2A2A2A2A2A2A0002 /* ContentView.swift */,
+				AAAA5A5A5A5A5A5A0008 /* Assets.xcassets */,
+				AAAA5A5A5A5A5A5A0004 /* Views */,
+				AAAA5A5A5A5A5A5A0005 /* Models */,
+				AAAA5A5A5A5A5A5A0006 /* Utils */,
+				AAAA5A5A5A5A5A5A0007 /* ViewModels */,
+			);
+			path = JsonSwag;
+			sourceTree = "<group>";
+		};
+		AAAA5A5A5A5A5A5A0003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA3A3A3A3A3A3A0001 /* JsonSwag.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAAA5A5A5A5A5A5A0004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA2A2A2A2A2A2A0003 /* ValueView.swift */,
+				AAAA2A2A2A2A2A2A0004 /* KeyValueRowView.swift */,
+				AAAA2A2A2A2A2A2A0005 /* RecordCardView.swift */,
+				AAAA2A2A2A2A2A2A0009 /* TabBarView.swift */,
+				AAAA2A2A2A2A2A2A0010 /* MainView.swift */,
+				AAAA2A2A2A2A2A2A0012 /* SearchBarView.swift */,
+				AAAA2A2A2A2A2A2A0013 /* HighlightedTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AAAA5A5A5A5A5A5A0005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA2A2A2A2A2A2A0006 /* JSONRecord.swift */,
+				AAAA2A2A2A2A2A2A0008 /* TabManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AAAA5A5A5A5A5A5A0006 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA2A2A2A2A2A2A0007 /* JSONLParser.swift */,
+				AAAA2A2A2A2A2A2A0015 /* LazyRecordLoader.swift */,
+				AAAA2A2A2A2A2A2A0016 /* ExpandAllKey.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AAAA5A5A5A5A5A5A0007 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA2A2A2A2A2A2A0014 /* SearchManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAAA6A6A6A6A6A6A0001 /* JsonSwag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAAA7A7A7A7A7A7A0001 /* Build configuration list for PBXNativeTarget "JsonSwag" */;
+			buildPhases = (
+				AAAA8A8A8A8A8A8A0001 /* Sources */,
+				AAAA4A4A4A4A4A4A0001 /* Frameworks */,
+				AAAA9A9A9A9A9A9A0001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JsonSwag;
+			productName = JsonSwag;
+			productReference = AAAA3A3A3A3A3A3A0001 /* JsonSwag.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAAA10A10A10A10A0001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AAAA6A6A6A6A6A6A0001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = AAAA7A7A7A7A7A7A0002 /* Build configuration list for PBXProject "JsonSwag" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAAA5A5A5A5A5A5A0001;
+			productRefGroup = AAAA5A5A5A5A5A5A0003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAAA6A6A6A6A6A6A0001 /* JsonSwag */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAAA9A9A9A9A9A9A0001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAAA1A1A1A1A1A1A0016 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAAA8A8A8A8A8A8A0001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAAA1A1A1A1A1A1A0001 /* JsonSwagApp.swift in Sources */,
+				AAAA1A1A1A1A1A1A0002 /* ContentView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0003 /* ValueView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0004 /* KeyValueRowView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0005 /* RecordCardView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0006 /* JSONRecord.swift in Sources */,
+				AAAA1A1A1A1A1A1A0007 /* JSONLParser.swift in Sources */,
+				AAAA1A1A1A1A1A1A0008 /* TabManager.swift in Sources */,
+				AAAA1A1A1A1A1A1A0009 /* TabBarView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0010 /* MainView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0011 /* SearchBarView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0012 /* HighlightedTextView.swift in Sources */,
+				AAAA1A1A1A1A1A1A0013 /* SearchManager.swift in Sources */,
+				AAAA1A1A1A1A1A1A0014 /* LazyRecordLoader.swift in Sources */,
+				AAAA1A1A1A1A1A1A0015 /* ExpandAllKey.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AAAA11A11A11A11A0001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				MTL_COMPILER_WORKAROUND_REFS_TO_WEAK_PRIVATE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAAA11A11A11A11A0002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_COMPILER_WORKAROUND_REFS_TO_WEAK_PRIVATE = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AAAA11A11A11A11A0003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = JsonSwag/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jsonswag.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AAAA11A11A11A11A0004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = JsonSwag/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jsonswag.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAAA7A7A7A7A7A7A0001 /* Build configuration list for PBXNativeTarget "JsonSwag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAAA11A11A11A11A0003 /* Debug */,
+				AAAA11A11A11A11A0004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAAA7A7A7A7A7A7A0002 /* Build configuration list for PBXProject "JsonSwag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAAA11A11A11A11A0001 /* Debug */,
+				AAAA11A11A11A11A0002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAAA10A10A10A10A0001 /* Project object */;
+}
