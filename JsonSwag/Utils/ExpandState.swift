@@ -4,11 +4,22 @@ import SwiftUI
 class ExpandState {
     var expandedPaths: Set<String> = []
     var globalState: ExpandAllState = .none
+    var maxExpandDepth: Int = 4  // Limit depth to prevent crashes
     
     func isExpanded(_ path: String) -> Bool {
-        if globalState == .expandAll { return true }
         if globalState == .collapseAll { return false }
+        if globalState == .expandAll {
+            let depth = pathDepth(path)
+            return depth < maxExpandDepth
+        }
         return expandedPaths.contains(path)
+    }
+    
+    private func pathDepth(_ path: String) -> Int {
+        // Empty or root path is depth 0
+        if path.isEmpty { return 0 }
+        // Count dots and brackets to determine depth
+        return path.filter { $0 == "." || $0 == "[" }.count
     }
     
     func toggle(_ path: String) {
