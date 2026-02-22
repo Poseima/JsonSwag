@@ -31,8 +31,11 @@ struct ValueView: View {
     var isRegex: Bool = false
     var currentKeyPath: String = ""
     
-    @Environment(\.expandAllState) private var expandAllState
-    @State private var isExpanded: Bool = false
+    @Environment(ExpandState.self) private var expandState
+    
+    private var isExpanded: Bool {
+        expandState.isExpanded(currentKeyPath)
+    }
     
     private var jsonValue: JSONValue {
         switch value {
@@ -162,9 +165,7 @@ struct ValueView: View {
         case .object(let obj):
             VStack(alignment: .leading, spacing: 4) {
                 Button(action: { 
-                    withAnimation(.easeInOut(duration: 0.15)) {
-                        isExpanded.toggle() 
-                    }
+                    expandState.toggle(currentKeyPath)
                 }) {
                     HStack(spacing: 4) {
                         Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
@@ -176,20 +177,6 @@ struct ValueView: View {
                     }
                 }
                 .buttonStyle(.plain)
-                .task(id: expandAllState) {
-                    switch expandAllState {
-                    case .expandAll:
-                        if !isExpanded { 
-                            isExpanded = true 
-                        }
-                    case .collapseAll:
-                        if isExpanded { 
-                            isExpanded = false 
-                        }
-                    case .none:
-                        break
-                    }
-                }
                 
                 if isExpanded {
                     VStack(alignment: .leading, spacing: 6) {
@@ -218,9 +205,7 @@ struct ValueView: View {
         case .array(let arr):
             VStack(alignment: .leading, spacing: 4) {
                 Button(action: { 
-                    withAnimation(.easeInOut(duration: 0.15)) {
-                        isExpanded.toggle() 
-                    }
+                    expandState.toggle(currentKeyPath)
                 }) {
                     HStack(spacing: 4) {
                         Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
@@ -232,20 +217,6 @@ struct ValueView: View {
                     }
                 }
                 .buttonStyle(.plain)
-                .task(id: expandAllState) {
-                    switch expandAllState {
-                    case .expandAll:
-                        if !isExpanded { 
-                            isExpanded = true 
-                        }
-                    case .collapseAll:
-                        if isExpanded { 
-                            isExpanded = false 
-                        }
-                    case .none:
-                        break
-                    }
-                }
                 
                 if isExpanded {
                     VStack(alignment: .leading, spacing: 6) {

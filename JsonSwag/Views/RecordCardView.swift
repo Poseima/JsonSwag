@@ -9,7 +9,7 @@ struct RecordCardView: View, Equatable {
     var isCurrentMatch: Bool = false
     var highlightedKeys: Set<String> = []
     
-    @State private var expandState: ExpandAllState = .none
+    @State private var expandState = ExpandState()
     
     static func == (lhs: RecordCardView, rhs: RecordCardView) -> Bool {
         lhs.record.id == rhs.record.id &&
@@ -32,20 +32,18 @@ struct RecordCardView: View, Equatable {
                 HStack(spacing: 6) {
                     // Expand/Collapse button
                     Button(action: {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            if expandState == .expandAll {
-                                expandState = .collapseAll
-                            } else {
-                                expandState = .expandAll
-                            }
+                        if expandState.globalState == .expandAll {
+                            expandState.setGlobalState(.collapseAll)
+                        } else {
+                            expandState.setGlobalState(.expandAll)
                         }
                     }) {
                         Image(systemName: "chevron.down")
                             .font(.system(size: 11, weight: .semibold))
-                            .foregroundColor(expandState == .expandAll ? .accentColor : .secondary)
+                            .foregroundColor(expandState.globalState == .expandAll ? .accentColor : .secondary)
                     }
                     .buttonStyle(.plain)
-                    .help(expandState == .expandAll ? "Collapse All" : "Expand All")
+                    .help(expandState.globalState == .expandAll ? "Collapse All" : "Expand All")
                     
                     // Copy button
                     Button(action: copyToClipboard) {
@@ -99,7 +97,7 @@ struct RecordCardView: View, Equatable {
         .onTapGesture(count: 2) {
             copyToClipboard()
         }
-        .environment(\.expandAllState, expandState)
+        .environment(expandState)
     }
     
     private func copyToClipboard() {

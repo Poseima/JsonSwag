@@ -9,7 +9,7 @@ struct JSONTreeView: View {
     var arrayLoader: LazyJSONArrayLoader?
     var onLoadMore: (() -> Void)?
     
-    @State private var expandState: ExpandAllState = .none
+    @State private var expandState = ExpandState()
     
     private var displayValue: Any {
         if let loader = arrayLoader {
@@ -60,20 +60,18 @@ struct JSONTreeView: View {
                 HStack(spacing: 6) {
                     // Expand/Collapse button
                     Button(action: {
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            if expandState == .expandAll {
-                                expandState = .collapseAll
-                            } else {
-                                expandState = .expandAll
-                            }
+                        if expandState.globalState == .expandAll {
+                            expandState.setGlobalState(.collapseAll)
+                        } else {
+                            expandState.setGlobalState(.expandAll)
                         }
                     }) {
                         Image(systemName: "chevron.down")
                             .font(.system(size: 11, weight: .semibold))
-                            .foregroundColor(expandState == .expandAll ? .accentColor : .secondary)
+                            .foregroundColor(expandState.globalState == .expandAll ? .accentColor : .secondary)
                     }
                     .buttonStyle(.plain)
-                    .help(expandState == .expandAll ? "Collapse All" : "Expand All")
+                    .help(expandState.globalState == .expandAll ? "Collapse All" : "Expand All")
                     
                     // Copy button
                     Button(action: copyToClipboard) {
@@ -182,7 +180,7 @@ struct JSONTreeView: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color(nsColor: .separatorColor).opacity(0.3), lineWidth: 0.5)
         )
-        .environment(\.expandAllState, expandState)
+        .environment(expandState)
     }
     
     private func copyToClipboard() {
